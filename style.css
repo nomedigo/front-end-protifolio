@@ -1,0 +1,249 @@
+/* Importa a fonte Poppins do Google Fonts com várias variações de peso e estilo */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reseta as margens e os preenchimentos de todos os elementos para zero */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo geral do corpo da página */
+body{
+    
+    height: 100vh;
+    font-family: 'poppins';
+}
+
+/* Estilo do cabeçalho da página */
+header{
+    display: flex; /* Usa flexbox para layout */
+    justify-content: space-around; /* Espaça os elementos ao longo do eixo principal */
+    align-items: center; /* Alinha os itens no centro ao longo do eixo transversal */
+    gap: 1rem; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+    padding: .8rem; /* Espaçamento interno */
+    background-color: #4ca4bc; /* Cor de fundo */
+    min-height: 50px; /* Altura mínima */
+}
+
+
+/* Estilo da caixa de imagem no cabeçalho */
+.box-img-header{
+    height: 100%;
+}
+
+/* Estilo da navegação */
+nav{
+    display: flex; /* Usa flexbox para layout */
+    gap: 2rem; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza os itens */
+    align-items: center; /* Alinha os itens no centro */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+}
+
+/* Estilo dos links de navegação */
+.nav-link{
+    text-decoration: none; /* Remove a decoração de texto (sublinhado) */
+    color: #ffffff; /* Cor do texto */
+}
+
+/* Estilo dos links de navegação ao passar o mouse */
+.nav-link:hover{
+    color: black; /* Muda a cor do texto para preto */
+    transition: .4s; /* Transição suave */
+    text-decoration: underline; /* Sublinha o texto */
+}
+
+/* Estilo do texto animado */
+.txt-animado {
+    font-size: 45px; /* Tamanho da fonte */
+    font-weight: 300; /* Peso da fonte */
+}
+
+/* Estilo dos spans dentro do texto animado */
+.txt-animado span {
+    position: relative; /* Posição relativa para usar pseudo-elementos */
+}
+
+/* Estilo do pseudo-elemento ::before dentro do span */
+.txt-animado span::before {
+    content: ""; /* Conteúdo vazio */
+    color: #4ca4bc;/* Cor */
+    animation: palavras 20s infinite; /* Animação que alterna o texto */
+}
+
+
+/* Estilo do pseudo-elemento ::after dentro do span */
+.txt-animado span::after {
+    content: ""; /* Conteúdo vazio */
+    position: absolute; /* Posição absoluta */
+    height: 100%; /* Altura total */
+    border-left: 2px solid #4ca4bc; /* Linha vertical */
+    right: -10px; /* Posição à direita */
+    animation: cursor .8s, digita 20s steps(80) infinite; /* Animação do cursor */
+    width: calc(100% + 18px); /* Largura calculada */
+    background-color: #ffffff; /* Cor de fundo */
+}
+
+/* Animação digita que define a largura do elemento */
+@keyframes digita {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 18px);
+    }
+}
+
+@keyframes cursor {
+    0% {
+        border-left: 2px solid #212121;
+    }
+}
+
+@keyframes palavras {
+    0%, 20% {
+        content: "Front-end";
+    }
+    21%, 40% {
+        content: "Back-end";
+    }
+    41%, 60% {
+        content: "Full-stack";
+    }
+    61%, 80% {
+        content: "Front-end";
+    }
+    81%, 100% {
+        content: "Full-stack";
+    }
+}
+
+/* Estilo do elemento principal */
+main{
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Direção da coluna */
+    gap: 2rem; /* Espaçamento entre os itens */
+}
+
+/* Estilo das seções */
+section{
+    padding: 4rem; /* Espaçamento interno */
+}
+
+/* Estilo da primeira seção */
+.first-section{
+    display: flex; /* Usa flexbox para layout */
+    justify-content: space-evenly;
+    gap: 4rem; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+    align-items: center; /* Alinha os itens no centro */
+    min-height: 500px; /* Altura mínima */
+}
+
+
+/* Estilo comum para a segunda e quarta seção */
+:is(.second-section, .fourth-section){
+    background-color: #4ca4bc; /* Cor de fundo */
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Direção da coluna */
+    align-items: center; /* Alinha os itens no centro */
+    justify-content: center; /* Centraliza os itens */
+
+}
+
+/* Estilo da lista na segunda seção */
+.second-section ul{
+    list-style: none; /* Remove os marcadores da lista */
+    display: flex; /* Usa flexbox para layout */
+    gap: 2rem;/* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza os itens */
+    align-items: center; /* Alinha os itens no centro */
+    gap: 2rem;
+    flex-wrap: wrap;/* Permite que os itens quebrem linha se necessário */
+}
+
+/* Estilo dos itens da lista na segunda seção */
+.second-section ul li{
+    letter-spacing: 2px;/* Espaçamento entre as letras */
+    font-weight: bold; /* Peso da fonte */
+}
+
+/* Estilo dos itens da lista na segunda seção ao passar o mouse */
+.second-section ul li:hover{
+    color: #ffffff;/* Muda a cor do texto */
+    transition: .4s;/* Transição suave */
+    cursor: default;/* Cursor padrão */
+}
+/* Estilo dos títulos */
+.title{
+   color: #000000;
+}
+
+/* Estilo da terceira seção */
+.third-section{
+    display: flex;/* Usa flexbox para layout */
+    flex-direction: column;/* Direção da coluna */
+    gap: 2rem;/* Espaçamento entre os itens */
+}
+
+/* Estilo dos divs dentro da terceira seção */
+.third-section> div{
+    display: flex;/* Usa flexbox para layout */
+    gap: 4rem;/* Espaçamento entre os itens */
+    justify-content: center;/* Centraliza os itens */
+    align-items: center;/* Alinha os itens no centro */
+    flex-wrap: wrap;/* Permite que os itens quebrem linha se necessário */
+}
+
+/* Estilo das imagens dentro dos divs na terceira seção */
+.third-section> div img{
+    width: 200px;/* Largura das imagens */
+    border-radius: 10px;/* Borda arredondada */
+}
+
+
+/* Estilo dos parágrafos dentro dos divs na terceira seção */
+.third-section> div p{
+    max-width: 600px;/* Largura máxima */
+    text-align: justify;/* Texto justificado */
+}
+
+/* Estilo do rodapé */
+footer{
+    padding: 4rem;/* Espaçamento interno */
+    display: flex;/* Usa flexbox para layout */
+    flex-direction: column;/* Direção da coluna */
+    gap: 2rem;/* Espaçamento entre os itens */
+
+}
+
+/* Estilo dos divs dentro do rodapé */
+footer> div{
+    display: flex; /* Usa flexbox para layout */
+    justify-content: center;/* Centraliza os itens */
+    gap: 2rem;/* Espaçamento entre os itens */
+    flex-wrap: wrap;/* Permite que os itens quebrem linha se necessário */
+} 
+/* Estilo da lista de projetos */
+#my-projects-list{
+    display: flex; /* Usa flexbox para layout */
+    gap: 2rem; /* Espaçamento entre os itens */
+    padding: 2rem; /* Espaçamento interno */ 
+    align-items: center; /* Alinha os itens no centro ao longo do eixo transversal */
+    justify-content: center; /* Centraliza os itens ao longo do eixo principal */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+    font-weight: bold; /* Define o peso da fonte como negrito */
+}
+
+/* Estilo dos links dentro da lista de projetos */
+#my-projects-list a{
+    text-decoration: none; /* Remove a decoração de texto (sublinhado) */
+    color: #000000; /* Define a cor do texto como preto */
+}
+
+/* Estilo dos links dentro da lista de projetos ao passar o mouse */
+#my-projects-list a:hover{
+    transition: .4s; /* Define uma transição suave de 0.4 segundos */
+    color: #ffffff; /* Muda a cor do texto para branco */
+}
